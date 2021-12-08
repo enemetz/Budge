@@ -11,9 +11,7 @@ struct HomePage: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("")
-                    .navigationTitle("Budget")
-                Text("Amount left")
+                Text("Amount left").navigationTitle("Budget")
                 // TODO: Add pie chart with budget in middle
             }
         }

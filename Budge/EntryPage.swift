@@ -14,18 +14,18 @@ struct EntryPage: View {
     @State private var wants: Double = 30
     @State private var savings: Double = 20
     @State private var isEditing = false
-    @State private var monthlyIncome = "0"
+    @State private var monthlyIncome = ""
     
     var body: some View {
         NavigationView {
             VStack{
-                Text("Select what percentage you would like \n to spend on each category").navigationTitle("Welcome to Budge").padding(.bottom, 20)
-                
                 Text("Enter your monthly income")
                 TextField(
                     "Monthly income",
                     text: $monthlyIncome
-                ).frame(alignment: .center)
+                ).frame(width: 150, height: 25, alignment: .center).padding(.bottom, 25)
+                
+                Text("Select what percentage you would like \n to spend on each category").navigationTitle("Welcome to Budge").padding(.bottom, 20)
                 
                 Slider(value: $needs, in: 0...100).frame(width: 300, height: 20, alignment: .center)
                 Text("Necessities: \(needs.rounded().formatted(.number))%").frame(alignment: .center)
