@@ -13,6 +13,7 @@ struct HomePage: View {
             VStack {
                 Text("")
                     .navigationTitle("Budget")
+                Text("Amount left")
                 // TODO: Add pie chart with budget in middle
             }
         }
