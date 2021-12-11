@@ -36,7 +36,14 @@ struct EntryPage: View {
                 Slider(value: $savings, in: 0...100).frame(width: 300, height: 20, alignment: .center)
                 Text("Savings: \(savings.rounded().formatted(.number))%").padding(.bottom, 20).frame(alignment: .center)
                 
-                NavigationLink("Submit", destination: HomePage())
+//                NavigationLink("Submit", destination: HomePage(income: monthlyIncome))
+                Button(action: {
+                            self.isEditing.toggle()
+                        }){
+                           Text("Go to Second View")
+                        }.sheet(isPresented: $isEditing){
+                            HomePage(income: self.monthlyIncome, balance: 1000)
+                }
                 
             }
         }
